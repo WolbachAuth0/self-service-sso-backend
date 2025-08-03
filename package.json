@@ -1,0 +1,41 @@
+{
+  "name": "01-login",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vite",
+    "build": "vite build",
+    "start": "node ./start.js",
+    "dev": "nodemon ./start.js",
+    "script": "node ./api/scripts/ss-sso-tests.js"
+  },
+  "dependencies": {
+    "@auth0/auth0-vue": "^2.3.0",
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "auth0": "^4.27.0",
+    "bootstrap": "^5.3.7",
+    "bootstrap-vue-next": "^0.30.4",
+    "bootswatch": "^5.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2",
+    "express-jwt": "^8.5.1",
+    "express-jwt-authz": "^2.4.1",
+    "express-winston": "^4.2.0",
+    "helmet": "^8.1.0",
+    "highlight.js": "^11.9.0",
+    "jwks-rsa": "^3.2.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.1",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.6.1",
+    "@vue/compiler-sfc": "^3.3.4",
+    "nodemon": "^3.1.10",
+    "typescript": "^4.9.3",
+    "unplugin-vue-components": "^28.8.0",
+    "vite": "^2.9.16",
+    "vite-svg-loader": "^5.1.0"
+  }
+}
