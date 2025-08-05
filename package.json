@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node ./start.js",
     "dev": "nodemon ./start.js",
-    "script": "node ./api/scripts/ss-sso-tests.js"
+    "script": "node ./scripts/ss-sso-tests.js"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "^2.1.0",
