@@ -1,5 +1,5 @@
-const server = require('./api/server')
-const { logger } = require('./api/models/Logger')
+const server = require('./server')
+const { logger } = require('./models/Logger')
 
 startup(server)
 
@@ -13,7 +13,7 @@ async function startup(server) {
 
 function startServer () {
 	// serve the api on the same port as the front-end in production, but on a different port in development.
-  const port = process.env.NODE_ENV === 'development' ? 3000 : process.env.PORT || 8080
+  const port = process.env.NODE_ENV === 'development' ? process.env.PORT : 8080
   server.listen(port, () => {
     logger.info(`application is listening on port: ${port}`)
   })
