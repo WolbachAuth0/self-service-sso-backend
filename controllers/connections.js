@@ -26,7 +26,7 @@ async function createSSOTicket(req, res) {
 			}
 		};
     
-    const data = await Connection.createSSOTicket(connection_config);
+    const data = await Connection.createTicket(connection_config);
     const message = `Self Service SSO ticket created.`;
     respond(req, res).created({ message, data});
   } catch (error) {

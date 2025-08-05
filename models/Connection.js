@@ -18,15 +18,22 @@ class Connection {
 	static get ticketPattern () {
 		return new RegExp(`^https://${process.env.VITE_AUTH0_CUSTOM_DOMAIN}/self-service/connections-flow\\?ticket=[a-zA-Z0-9]+$`);
 	}
+  static get namePattern () {
+    return new RegExp('^[a-zA-Z0-9](-[a-zA-Z0-9]|[a-zA-Z0-9])*$')
+  }
 
 	static computeName(display_name) {
 		// result must match /^[a-zA-Z0-9-_]+$/
 		const name = String(display_name)
 			.trim()
-			.replaceAll(/\s/, '_')
-			.replaceAll(/[^a-zA-Z0-9-_]/, '-');
+			.replaceAll(/\s/g, '-')
+			.replaceAll(/[^a-zA-Z0-9-_]/g, '-');
 		return name
 	}
+
+  static fixName (name) {
+
+  }
 
 	static ticketIdByURL(ticket_url) {
 		return ticket_url.split('?ticket=')[1]
