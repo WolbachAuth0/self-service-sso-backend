@@ -13,6 +13,9 @@ const management = require("./Auth0")(scopes)
 class Connection {
   constructor() {}
 
+  /**
+   * Self Service profile ID for Connections
+   */
   static get profileId() {
     return "ssp_mCRbWyWcT7UZ5SoMXqLULB"
   }
@@ -37,7 +40,7 @@ class Connection {
     return name
   }
 
-  static fixName(name) {}
+  // static fixName(name) {}
 
   static ticketIdByURL(ticket_url) {
     return ticket_url.split("?ticket=")[1]
@@ -73,14 +76,11 @@ class Connection {
     const enabled_clients = [process.env.VITE_AUTH0_CLIENT_ID]
     const body = {
       connection_config,
-      provisioning_config,
+      provisioning_config, // Added to Enable SS SCIM
       ttl_sec,
       enabled_clients,
     }
-    const response = await management.selfServiceProfiles.createSsoTicket(
-      { id },
-      body
-    )
+    const response = await management.selfServiceProfiles.createSsoTicket({ id }, body)
     return response.data
   }
 

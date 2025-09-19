@@ -26,6 +26,7 @@ async function createSSOTicket(req, res) {
       },
     }
     const provisioning_config = {
+      // SCIM Operations you are allowing.
       scopes: [
         "get:users",
         "post:users",
@@ -33,7 +34,7 @@ async function createSSOTicket(req, res) {
         "patch:users",
         "delete:users",
       ],
-      token_lifetime: 1000,
+      token_lifetime: 86400,
     }
 
     const data = await Connection.createTicket(
